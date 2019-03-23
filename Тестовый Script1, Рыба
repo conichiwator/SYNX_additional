@@ -24,7 +24,16 @@ cp syndicate.conf /home/mn01/.syndicate
 
 nano syndicate.conf
 
+ip -6 addr show
 
+# https://contabo.com/?show=tutorials&tutorial=configuring-additional-ip-addresses
 su - root
 cd ~/etc/netplan/
 nano 01-netcfg.yaml
+добавить адреса (вначале пробелы) - копи-паст - Ctrl+Insert, Вставка - правая кнопка мыши
+вот тут проблема может быть - потому что как найти строчку куда вставлять надо - тупо по номеру строки копирую в следующую, - 10ая строка, копирую в 11ую
+        - 2a02:c205:XXXX:XXXX:0000:0000:0000:0001/64
+        - 2a02:c205:XXXX:XXXX:0000:0000:0000:0002/64
+        - 2a02:c205:XXXX:XXXX:0000:0000:0000:0003/64
+        Ctrl-X, затем Y, затем Enter
+netplan apply
