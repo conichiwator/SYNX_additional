@@ -1,0 +1,22 @@
+#Создаю нового юзера
+# создаётся папка: /home/mn01
+adduser mn01
+# Убунту запрашивает пароль два раза: mn01 
+# здесь нужно программно ввести mn01 несколько раз
+# система запрашивает ввод данных о пользователе, которые нужно программно ввести 
+#   Full Name []:
+#    Room Number []:
+#    Work Phone []:
+#    Home Phone []:
+#    Other []:
+# Нужно подтвердить корректность информации
+# Is the information correct? [Y/n] 
+usermod -aG sudo mn01
+# Авторизуемся под нужным пользователем
+su - mn01
+# Запускаем скрипт по настройке мастерноды
+wget https://raw.githubusercontent.com/conichiwator/SYNX_additional/f516391c1d3062ed2a3bac8feb07bfcf398ee830/synx.sh; chmod 777 synx.sh; ./synx.sh
+# Создаем собственный конфиг в папке пользователя
+su - root
+cd ~/.syndicate
+cp syndicate.conf /home/mn01/.syndicate
