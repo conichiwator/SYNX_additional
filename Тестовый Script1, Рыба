@@ -20,3 +20,11 @@ wget https://raw.githubusercontent.com/conichiwator/SYNX_additional/f516391c1d30
 su - root
 cd ~/.syndicate
 cp syndicate.conf /home/mn01/.syndicate
+
+
+nano syndicate.conf
+
+
+su - root
+cd ~/etc/netplan/
+nano 01-netcfg.yaml
