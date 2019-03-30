@@ -2,6 +2,8 @@
 I. Первичная настройка
 1) Создал ВПСКУ
 2) Зашёл рутом
+  su - root
+  
 3) Закачал скриптом что надо
 
 wget https://raw.githubusercontent.com/conichiwator/SYNX_additional/f516391c1d3062ed2a3bac8feb07bfcf398ee830/synx.sh;
@@ -23,7 +25,9 @@ chmod 777 synx.sh;
   netplan apply
                                              
 II. Добавление пользователя
-
+0) Захожу рутом
+  su - root
+  
 1) Создал пользователя
 1 шаг Создаю нового юзера
   adduser mn01  \\ создаётся папка: /home/mn01
@@ -56,7 +60,8 @@ Is the information correct? [Y/n]
   mkdir .syndicate
   
 3) Зашёл под рутом и скопировал в эту папку конфиг
-  Вхожу рутом
+Вхожу рутом
+  su - root
   
 Перехожу в папку - Рутовский syndicate.conf хранится здесь:
   cd ~/.syndicate
@@ -72,8 +77,11 @@ Is the information correct? [Y/n]
 
 
 4) Открыл с помощью наны конфиг поменял там - айпишник в скобочках и mnprivkey (в консоли кошелька генерируется)
-
-mnprivkey - открывается кошелек и генерируется новый
+  su - mn01 
+  cd .syndicate/
+  nano syndicate.conf
+  
+ mnprivkey - открывается кошелек и генерируется новый
 Wallet-Tools-Console:
   masternode genkey
 
