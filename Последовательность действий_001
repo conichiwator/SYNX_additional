@@ -77,6 +77,10 @@ Is the information correct? [Y/n]
 
 
 4) Открыл с помощью наны конфиг поменял там - айпишник в скобочках и mnprivkey (в консоли кошелька генерируется)
+  Узнал рабочие айпишники ipv6:
+  ip -6 addr show
+
+
   su - mn01 
   cd .syndicate/
   nano syndicate.conf
